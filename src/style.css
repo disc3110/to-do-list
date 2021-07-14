@@ -1,6 +1,46 @@
-.hello {
-    color: red;
-  }
 body {
-    background-color: bisque;
+  background-color: black;
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+  background-color: black;
+}
+
+.tasks-wraper {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+}
+
+.header {
+  font-weight: bolder;
+  text-align: center;
+  font-size: x-large;
+}
+
+.add-item {
+  width: 90%;
+  height: 1rem;
+  margin: auto;
+}
+
+.task {
+  list-style-type: none;
+  margin: 1px 0;
+  border: black 1px;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.tasks-item {
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.checkbox {
+  margin-right: 5px;
 }
