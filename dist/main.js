@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".hello {\n    color: red;\n  }\nbody {\n    background-color: bisque;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: black;\n}\n\nul {\n  padding: 0.25rem 0;\n}\n\n.container {\n  width: 75%;\n  margin: auto;\n  background-color: black;\n}\n\n.tasks-wraper {\n  display: flex;\n  flex-direction: column;\n  background-color: white;\n}\n\n.header {\n  font-weight: bolder;\n  color: rgb(109, 107, 107);\n  font-size: x-large;\n}\n\n.add-item {\n  margin: auto;\n  width: 100%;\n  padding: 12px 20px;\n  box-sizing: border-box;\n  border: none;\n}\n\n.task {\n  list-style-type: none;\n  margin: 1px 0;\n  border: black 1px;\n  padding: 1rem;\n  border-bottom: 1px solid #eee;\n}\n\n.tasks-item {\n  align-items: center;\n  padding: 1rem;\n  border-bottom: 1px solid #eee;\n}\n\n.checkbox {\n  margin-right: 5px;\n}\n\n.btn-clear-all {\n  background-color: rgb(148, 144, 144);\n  color: rgb(109, 107, 107);\n  border: none;\n  width: 100%;\n  height: 100%;\n  font-size: x-large;\n  padding: 0.5rem 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -470,36 +470,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
-const showTasks = document.querySelector('#tasks')
+const showTasks = document.querySelector('#tasks');
 
 const tasks = [
-    {
-        description: 'study',
-        completed: true,
-        index: 1,
-    },
-    {
-        description: 'tidy my room',
-        completed: false,
-        index: 2,
-    },
-    {
-        description: 'go to the gym',
-        completed: false,
-        index: 3,
-    }
+  {
+    description: 'study',
+    completed: true,
+    index: 1,
+  },
+  {
+    description: 'tidy my room',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'go to the gym',
+    completed: false,
+    index: 3,
+  },
 ];
 
 function renderTasks(tasksArr) {
-
-    tasksArr.forEach(task => {
-        showTasks.innerHTML += `<li class="task" data-index="${task.index}">${task.description}</li>`;
-    });
-
-    return tasksList
+  tasksArr.forEach((task) => {
+    showTasks.innerHTML += `<li class="task" data-index="${task.index}"><input class="checkbox" type="checkbox">${task.description}</li>`;
+  });
 }
 
-renderTasks(tasks)
+window.addEventListener('load', renderTasks(tasks));
+
 })();
 
 /******/ })()
