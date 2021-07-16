@@ -1,10 +1,8 @@
-import { from } from 'form-data'; // eslint-disable-line
-import './style.css'; // eslint-disable-line
-import { dragndrop, renderTasks } from './drag-and-drop.js'; // eslint-disable-line
+import './style.css';
 
-import { checkboxesUpdate } from './status-updates.js'; // eslint-disable-line
+const showTasks = document.querySelector('#tasks');
 
-const tasks2 = [
+const tasks = [
   {
     description: 'study',
     completed: true,
@@ -22,26 +20,10 @@ const tasks2 = [
   },
 ];
 
-function setStorage(ToDoArr) {
-  localStorage.setItem('ToDo', JSON.stringify(ToDoArr));
+function renderTasks(tasksArr) {
+  tasksArr.forEach((task) => {
+    showTasks.innerHTML += `<li class="task" data-index="${task.index}"><input class="checkbox" type="checkbox">${task.description}</li>`;
+  });
 }
 
-function getStorage() {
-  const ToDoArr = JSON.parse(localStorage.getItem('ToDo'));
-  window.addEventListener('load', renderTasks(ToDoArr));
-}
-
-function checkStorage() {
-  if (localStorage.length > 0) {
-    getStorage();
-  } else {
-    setStorage(tasks2);
-    window.addEventListener('load', renderTasks(tasks2));
-  }
-}
-
-checkStorage();
-window.addEventListener('load', dragndrop(tasks2));
-window.addEventListener('load', checkboxesUpdate(tasks2));
-
-export { setStorage }; // eslint-disable-line
+window.addEventListener('load', renderTasks(tasks));
