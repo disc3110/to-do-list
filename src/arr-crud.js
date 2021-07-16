@@ -18,6 +18,7 @@ export class ToDoList {
 
   addTask(taskobj) {
     this.tasksArr.push(taskobj);
+    setStorage(this.tasksArr);
     return this.tasksArr;
   }
 
@@ -27,6 +28,7 @@ export class ToDoList {
     for (let x = 0; x < this.tasksArr.length; x += 1) {
       this.tasksArr[x].index = x + 1;
     }
+    setStorage(this.tasksArr);
     return this.tasksArr;
   }
 
