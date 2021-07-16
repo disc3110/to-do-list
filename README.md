@@ -12,6 +12,7 @@
 
 ## App description
 It is a website where you can add different task to your To Do List.
+![](screenshot.png)
 
 
 ## Pre requisites
@@ -22,6 +23,8 @@ Get a copy of the repository running this command in your OS terminal: `git clon
 
 
 go to the project folder
+
+run `npm install`
 
 run `npm run start` 
 
