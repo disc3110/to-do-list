@@ -13,20 +13,20 @@
 ## App description
 It is a website where you can add different task to your To Do List.
 ![](screenshot.png)
-
+![](screenrecording.mov)
 
 ## Pre requisites
 have npx installed
 
 ## Getting Started
-Get a copy of the repository running this command in your OS terminal: `git clone https://github.com/disc3110/to-do-list.git` to get a copy of the project.
+1- Get a copy of the repository running this command in your OS terminal: `git clone https://github.com/disc3110/to-do-list.git` to get a copy of the project.
 
 
-go to the project folder
+2- go to the project folder using `cd ./to-do-list`
 
-run `npm install`
+3- run `npm install`
 
-run `npm run start` 
+4- run `npm run start` 
 
 👤 **Author **
 

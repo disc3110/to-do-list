@@ -2,12 +2,19 @@
 
 import { checkboxesUpdate } from './status-updates.js'; // eslint-disable-line
 import { setStorage } from './index.js'; // eslint-disable-line
+import { ToDoList } from './arr-crud'; // eslint-disable-line
+import { toDoListArr } from './index.js'; // eslint-disable-line
 
 const showTasks = document.querySelector('#tasks');
 
 function renderTasks(tasksArr) {
+  showTasks.innerHTML = '';
   tasksArr.forEach((task) => {
-    showTasks.innerHTML += `<li draggable="true" class="task" data-index="${task.index}"><input class="checkbox" data-index="${task.index}" type="checkbox">${task.description}</li>`;
+    let checked = '';
+    if (task.completed) {
+      checked = 'checked';
+    }
+    showTasks.innerHTML += `<li draggable="true" class="task pos-${task.index}" data-index="${task.index}"><div class="task-to-do"><input class="checkbox" data-index="${task.index}" type="checkbox" ${checked}> ${task.description}</div><button class="btn-more" data-index="${task.index}">more<i class="fas fa-info-circle"></i></button></li>`;
   });
 }
 
@@ -66,11 +73,8 @@ function dragndrop(oriArr) {
           oriArr[x].index = x + 1;
         }
 
-        showTasks.innerHTML = '';
-        renderTasks(oriArr);
-        window.addEventListener('load', dragndrop(oriArr));
-        checkboxesUpdate(oriArr);
-        setStorage(oriArr);
+        toDoListArr.setNewArr(oriArr);
+        toDoListArr.arrayChanged();
       }
     });
   }
