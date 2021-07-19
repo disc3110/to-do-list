@@ -2,6 +2,8 @@
 
 # To Do List
 
+## Live version 
+[click here](https://disc3110.github.io/to-do-list/)
 
 ## Built With
 
